@@ -1,0 +1,24 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "AniList GPT",
+  "name_for_model": "anilist_gpt",
+  "description_for_human": "Discover anime and manga with AI-powered recommendations. Search 15,000+ titles, get personalized suggestions, explore characters, and track your watchlist directly in ChatGPT.",
+  "description_for_model": "A comprehensive anime and manga companion that helps users discover, search, and get recommendations for anime and manga titles. Use the provided tools to search anime by title, genre, season, or year; get trending and seasonal anime; explore character details; and receive personalized recommendations based on user preferences. Always use the tools rather than making assumptions about anime data.",
+  "auth": {
+    "type": "oauth",
+    "client_url": "https://anilist.co/api/v2/oauth/authorize",
+    "scope": "",
+    "authorization_url": "https://anilist.co/api/v2/oauth/token",
+    "authorization_content_type": "application/json",
+    "verification_tokens": {
+      "openai": "YOUR_VERIFICATION_TOKEN"
+    }
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://anilist-gpt.fly.dev/openapi.json"
+  },
+  "logo_url": "https://anilist-gpt.fly.dev/logo.png",
+  "contact_email": "support@anilist-gpt.com",
+  "legal_info_url": "https://anilist-gpt.fly.dev/legal"
+}

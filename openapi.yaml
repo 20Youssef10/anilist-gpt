@@ -1,0 +1,54 @@
+openapi: 3.0.1
+info:
+  title: AniList GPT API
+  description: API for searching and discovering anime and manga
+  version: 'v1'
+servers:
+  - url: https://anilist-gpt.fly.dev
+paths:
+  /health:
+    get:
+      operationId: healthCheck
+      summary: Check API health
+      responses:
+        "200":
+          description: API is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  service:
+                    type: string
+                  version:
+                    type: string
+  
+  /mcp:
+    post:
+      operationId: mcpRequest
+      summary: MCP Protocol Endpoint
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  enum: ["2.0"]
+                method:
+                  type: string
+                params:
+                  type: object
+                id:
+                  type: [string, integer]
+      responses:
+        "200":
+          description: MCP response
+          content:
+            application/json:
+              schema:
+                type: object
