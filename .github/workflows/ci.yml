@@ -1,0 +1,27 @@
+name: ci
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install MCP server deps
+        run: |
+          cd apps/mcp-server
+          npm install
+      - name: Build MCP server
+        run: |
+          cd apps/mcp-server
+          npm run build
+      - name: Install UI deps
+        run: |
+          cd apps/ui
+          npm install
+      - name: Build UI
+        run: |
+          cd apps/ui
+          npm run build
